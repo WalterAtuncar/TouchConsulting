@@ -1,0 +1,79 @@
+# General .NET Core ignores
+bin/
+obj/
+*.user
+*.vs/
+*.suo
+*.ncrunch*
+*.builds
+*.cache
+*.idea/
+*.DS_Store
+*.directory
+.vscode/
+*.log
+debug.log
+*.pid
+
+# DotNet Publish outputs
+*.publish/
+publish/
+
+# User-specific files
+*.sln.docstates
+.vscode/
+
+# Resharper ignores
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# ASP.NET specific files
+wwwroot/
+!.gitkeep
+
+# Angular specific files
+node_modules/
+dist/
+out-tsc/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.angular/
+.idea/
+*.env
+*.env.*
+
+# Compiled JavaScript files
+*.js
+*.js.map
+
+# Compiled CSS files
+*.css
+*.css.map
+
+# IDE files
+.vscode/
+*.code-workspace
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Angular CLI specific
+.angular/cache
+
+# Environment files
+*.env
+*.env.*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
