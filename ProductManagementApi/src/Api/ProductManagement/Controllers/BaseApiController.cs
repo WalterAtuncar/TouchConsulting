@@ -15,16 +15,27 @@ namespace ProductManagement.Controllers
             _mediator = mediator;
         }
 
-        protected ActionResult<ApiResponse<T>> ApiResponse<T>(T data, string message = "Operación exitosa", int statusCode = 200)
+        protected ApiResponse<T> ApiResponse<T>(T data, string message = "", int statusCode = 200)
         {
-            var response = Application.Common.Models.ApiResponse<T>.Success(data, message, statusCode);
-            return StatusCode(statusCode, response);
+            return new ApiResponse<T>
+            {
+                IsSuccess = true,
+                Message = message,
+                Data = data,
+                StatusCode = statusCode
+            };
         }
 
-        protected ActionResult<ApiResponse<T>> ApiError<T>(string message, int statusCode)
+        protected ApiResponse<T> ApiError<T>(string message, int statusCode = 400)
         {
-            var response = Application.Common.Models.ApiResponse<T>.Fail(message, statusCode);
-            return StatusCode(statusCode, response);
+            return new ApiResponse<T>
+            {
+                IsSuccess = false,
+                Message = message,
+                Data = default,
+                StatusCode = statusCode
+            };
         }
+
     }
 }

@@ -9,6 +9,6 @@ namespace Application.Request.Commands.Person
         public string LastName { get; set; } = null!;
         public string? Img { get; set; }
         public string? Email { get; set; }
-        public string CreatedBy { get; set; } = null!;
+        public string? CreatedBy { get; set; }
     }
 } 

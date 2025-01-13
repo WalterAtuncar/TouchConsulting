@@ -5,7 +5,7 @@ namespace Application.Request.Commands.RoleMenu
     public class DeleteRoleMenuCommand : IRequest<bool>
     {
         public int RoleMenuId { get; set; }
-        public string DeletedBy { get; set; } = null!;
+        public string? DeletedBy { get; set; }
 
         public DeleteRoleMenuCommand(int roleMenuId, string deletedBy)
         {

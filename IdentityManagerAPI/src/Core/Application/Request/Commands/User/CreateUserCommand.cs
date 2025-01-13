@@ -8,6 +8,6 @@ namespace Application.Request.Commands.User
         public string Password { get; set; } = null!;
         public int RoleId { get; set; }
         public int PersonId { get; set; }
-        public string CreatedBy { get; set; } = null!;
+        public string? CreatedBy { get; set; }
     }
 } 

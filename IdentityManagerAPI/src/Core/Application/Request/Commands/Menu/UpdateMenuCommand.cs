@@ -10,6 +10,6 @@ namespace Application.Request.Commands.Menu
         public string? Icon { get; set; }
         public int? ParentMenuId { get; set; }
         public bool IsGroup { get; set; }
-        public string UpdatedBy { get; set; } = null!;
+        public string? UpdatedBy { get; set; }
     }
 } 

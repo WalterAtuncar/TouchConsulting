@@ -12,7 +12,7 @@ namespace IdentityManager.Controllers.RoleMenu
     /// <summary>
     /// Controlador para la gestión de asignaciones de menús a roles en el sistema
     /// </summary>
-    public class RoleMenuController : BaseApiController
+    public class RoleMenuController : SecureBaseApiController
     {
         public RoleMenuController(IMediator mediator) : base(mediator)
         {
@@ -101,7 +101,7 @@ namespace IdentityManager.Controllers.RoleMenu
             {
                 if (!ModelState.IsValid)
                     return ApiError<int>("Datos inválidos", StatusCodes.Status400BadRequest);
-
+                SetCurrentUser(command);
                 var roleMenuId = await _mediator.Send(command);
                 return ApiResponse(roleMenuId, "Asignación de menú creada exitosamente", StatusCodes.Status201Created);
             }
@@ -132,7 +132,7 @@ namespace IdentityManager.Controllers.RoleMenu
 
                 if (!ModelState.IsValid)
                     return ApiError<bool>("Datos inválidos", StatusCodes.Status400BadRequest);
-
+                SetCurrentUser(command);
                 var result = await _mediator.Send(command);
 
                 if (!result)
@@ -157,11 +157,12 @@ namespace IdentityManager.Controllers.RoleMenu
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<ApiResponse<bool>>> Delete(int id, [FromQuery] string deletedBy)
+        public async Task<ActionResult<ApiResponse<bool>>> Delete(int id)
         {
             try
             {
-                var command = new DeleteRoleMenuCommand(id, deletedBy);
+                var command = new DeleteRoleMenuCommand(id, null);
+                SetCurrentUser(command);
                 var result = await _mediator.Send(command);
 
                 if (!result)

@@ -9,6 +9,6 @@ namespace Application.Request.Commands.User
         public string? Password { get; set; }
         public int RoleId { get; set; }
         public int PersonId { get; set; }
-        public string UpdatedBy { get; set; } = null!;
+        public string? UpdatedBy { get; set; }
     }
 } 

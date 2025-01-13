@@ -5,7 +5,7 @@ namespace Application.Request.Commands.Person
     public class DeletePersonCommand : IRequest<bool>
     {
         public int PersonId { get; set; }
-        public string DeletedBy { get; set; } = null!;
+        public string? DeletedBy { get; set; }
 
         public DeletePersonCommand(int personId, string deletedBy)
         {

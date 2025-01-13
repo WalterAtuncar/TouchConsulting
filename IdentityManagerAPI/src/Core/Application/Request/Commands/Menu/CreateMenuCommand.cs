@@ -9,6 +9,6 @@ namespace Application.Request.Commands.Menu
         public string? Icon { get; set; }
         public int? ParentMenuId { get; set; }
         public bool IsGroup { get; set; }
-        public string CreatedBy { get; set; } = null!;
+        public string? CreatedBy { get; set; } 
     }
 } 

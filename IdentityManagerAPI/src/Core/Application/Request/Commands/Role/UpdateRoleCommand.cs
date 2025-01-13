@@ -8,6 +8,6 @@ namespace Application.Request.Commands.Role
         public int RoleId { get; set; }
         public string Name { get; set; } = null!;
         public string? Description { get; set; }
-        public string UpdatedBy { get; set; } = null!;
+        public string? UpdatedBy { get; set; }
     }
 } 

@@ -6,6 +6,6 @@ namespace Application.Request.Commands.RoleMenu
     {
         public int RoleId { get; set; }
         public int MenuId { get; set; }
-        public string CreatedBy { get; set; } = null!;
+        public string? CreatedBy { get; set; }
     }
 } 
