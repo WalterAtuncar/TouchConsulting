@@ -179,7 +179,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44322
+          "Port": 7034
         }
       ],
       "UpstreamPathTemplate": "/api/products/product",
@@ -195,7 +195,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44322
+          "Port": 7034
         }
       ],
       "UpstreamPathTemplate": "/api/products/product/{id}",
@@ -211,7 +211,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44322
+          "Port": 7034
         }
       ],
       "UpstreamPathTemplate": "/api/products/category",
@@ -227,7 +227,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44322
+          "Port": 7034
         }
       ],
       "UpstreamPathTemplate": "/api/products/category/{id}",
