@@ -42,14 +42,11 @@
 
     <mat-form-field appearance="fill" class="full-width">
       <mat-label>Categoría</mat-label>
-      <mat-select formControlName="categoryId" required>
+      <mat-select formControlName="categoryId">
         <mat-option *ngFor="let category of categories" [value]="category.categoryId">
           {{category.name}}
         </mat-option>
       </mat-select>
-      <mat-error *ngIf="productForm.get('categoryId')?.hasError('required')">
-        La categoría es requerida
-      </mat-error>
     </mat-form-field>
   </mat-dialog-content>
 

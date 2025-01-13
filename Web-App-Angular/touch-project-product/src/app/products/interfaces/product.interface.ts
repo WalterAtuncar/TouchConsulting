@@ -5,11 +5,12 @@ export interface Product {
   price: number;
   stock: number;
   categoryId: number;
-  isDeleted: boolean;
+  category?: Category;
+  isDeleted?: boolean;
 }
 
 export interface Category {
   categoryId: number;
   name: string;
-  description: string;
+  description?: string;
 } 

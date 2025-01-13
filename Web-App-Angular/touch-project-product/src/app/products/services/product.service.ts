@@ -1,58 +1,43 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Product, Category } from '../interfaces/product.interface';
-import mockProducts from '../data/mock-products.json';
-import mockCategories from '../data/mock-categories.json';
+import { environment } from '../../../environments/environment';
+import { ApiResponse, PaginatedResponse } from '../../shared/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private products: Product[] = mockProducts;
-  private categories: Category[] = mockCategories;
+  private apiUrl = `${environment.apiUrl}/Product`;
 
-  getProducts(): Observable<Product[]> {
-    return of(this.products.filter(p => !p.isDeleted));
+  constructor(private http: HttpClient) {}
+
+  getProducts(page: number = 1, pageSize: number = 10): Observable<ApiResponse<PaginatedResponse<Product>>> {
+    const params = new HttpParams()
+      .set('pageNumber', page.toString())
+      .set('pageSize', pageSize.toString());
+
+    return this.http.get<ApiResponse<PaginatedResponse<Product>>>(this.apiUrl, { params });
   }
 
-  getCategories(): Observable<Category[]> {
-    return of(this.categories);
+  getCategories(): Observable<ApiResponse<Category[]>> {
+    return this.http.get<ApiResponse<Category[]>>(`${environment.apiUrl}/Category`);
   }
 
-  getProduct(id: number): Observable<Product> {
-    const product = this.products.find(p => p.productId === id && !p.isDeleted);
-    return of(product!);
+  getProduct(id: number): Observable<ApiResponse<Product>> {
+    return this.http.get<ApiResponse<Product>>(`${this.apiUrl}/${id}`);
   }
 
-  createProduct(product: Product): Observable<Product> {
-    const newProduct = {
-      ...product,
-      productId: this.getNextId(),
-      isDeleted: false
-    };
-    this.products.push(newProduct);
-    return of(newProduct);
+  createProduct(product: Product): Observable<ApiResponse<Product>> {
+    return this.http.post<ApiResponse<Product>>(this.apiUrl, product);
   }
 
-  updateProduct(id: number, product: Product): Observable<Product> {
-    const index = this.products.findIndex(p => p.productId === id);
-    if (index !== -1) {
-      this.products[index] = { ...product, productId: id };
-      return of(this.products[index]);
-    }
-    throw new Error('Producto no encontrado');
+  updateProduct(id: number, product: Product): Observable<ApiResponse<Product>> {
+    return this.http.put<ApiResponse<Product>>(`${this.apiUrl}/${id}`, product);
   }
 
-  deleteProduct(id: number): Observable<boolean> {
-    const index = this.products.findIndex(p => p.productId === id);
-    if (index !== -1) {
-      this.products[index].isDeleted = true;
-      return of(true);
-    }
-    return of(false);
-  }
-
-  private getNextId(): number {
-    return Math.max(...this.products.map(p => p.productId ?? 0)) + 1;
+  deleteProduct(id: number): Observable<ApiResponse<Product>> {
+    return this.http.delete<ApiResponse<Product>>(`${this.apiUrl}/${id}`);
   }
 } 

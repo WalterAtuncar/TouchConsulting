@@ -35,14 +35,18 @@ export class LowStockReportComponent implements OnInit {
   }
 
   loadCategories(): void {
-    this.productService.getCategories().subscribe(categories => {
-      this.categories = categories;
+    this.productService.getCategories().subscribe(response => {
+      if (response.success) {
+        this.categories = response.data;
+      }
     });
   }
 
   loadLowStockProducts(): void {
-    this.productService.getProducts().subscribe(products => {
-      this.products = products.filter(p => p.stock < this.LOW_STOCK_THRESHOLD);
+    this.productService.getProducts().subscribe(response => {
+      if (response.success) {
+        this.products = response.data.items.filter(p => p.stock < this.LOW_STOCK_THRESHOLD);
+      }
     });
   }
 

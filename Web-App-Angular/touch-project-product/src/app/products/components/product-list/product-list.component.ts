@@ -39,13 +39,15 @@ export class ProductListComponent implements OnInit {
 
   loadProducts(): void {
     this.productService.getProducts().subscribe(products => {
-      this.products = products;
+      console.log("products", products);
+      this.products = products.data.items;
     });
   }
 
   loadCategories(): void {
     this.productService.getCategories().subscribe(categories => {
-      this.categories = categories;
+      console.log("categories", categories);
+      //this.categories = categories;
     });
   }
 

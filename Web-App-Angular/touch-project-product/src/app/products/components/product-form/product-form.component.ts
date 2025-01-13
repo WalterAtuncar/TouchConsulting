@@ -39,7 +39,7 @@ export class ProductFormComponent implements OnInit {
       description: ['', [Validators.required]],
       price: ['', [Validators.required, Validators.min(0)]],
       stock: ['', [Validators.required, Validators.min(0)]],
-      categoryId: ['', [Validators.required]]
+      categoryId: ['']
     });
   }
 
@@ -52,7 +52,8 @@ export class ProductFormComponent implements OnInit {
 
   loadCategories(): void {
     this.productService.getCategories().subscribe(categories => {
-      this.categories = categories;
+      console.log("categories", categories);
+      this.categories = categories.data;
     });
   }
 

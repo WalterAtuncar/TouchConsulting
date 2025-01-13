@@ -183,11 +183,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/products/product",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
-      "DelegatingHandlers": [ "TokenHandler" ],
-      "RouteClaimsRequirement": {
-        "Role": [ "Admin", "User" ]
-      }
+      "UpstreamHttpMethod": [ "GET", "POST" ]
     },
     {
       "DownstreamPathTemplate": "/api/Product/{id}",
@@ -199,11 +195,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/products/product/{id}",
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
-      "DelegatingHandlers": [ "TokenHandler" ],
-      "RouteClaimsRequirement": {
-        "Role": [ "Admin", "User" ]
-      }
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
     },
     {
       "DownstreamPathTemplate": "/api/Category",
@@ -215,11 +207,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/products/category",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
-      "DelegatingHandlers": [ "TokenHandler" ],
-      "RouteClaimsRequirement": {
-        "Role": [ "Admin", "User" ]
-      }
+      "UpstreamHttpMethod": [ "GET", "POST" ]
     },
     {
       "DownstreamPathTemplate": "/api/Category/{id}",
@@ -231,11 +219,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/products/category/{id}",
-      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
-      "DelegatingHandlers": [ "TokenHandler" ],
-      "RouteClaimsRequirement": {
-        "Role": [ "Admin", "User" ]
-      }
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
     }
   ],
   "GlobalConfiguration": {

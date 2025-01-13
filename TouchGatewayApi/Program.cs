@@ -76,8 +76,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // Configurar Ocelot
-builder.Services.AddOcelot()
-    .AddDelegatingHandler<TokenHandler>();
+builder.Services.AddOcelot();
+    //.AddDelegatingHandler<TokenHandler>(); // Comentado temporalmente para deshabilitar validación de token
 
 var app = builder.Build();
 
