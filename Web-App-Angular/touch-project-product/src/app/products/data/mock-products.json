@@ -1,0 +1,56 @@
+[
+  {
+    "productId": 1,
+    "name": "Laptop HP ProBook",
+    "description": "Laptop empresarial con procesador Intel i7",
+    "price": 1299.99,
+    "stock": 50,
+    "categoryId": 1,
+    "isDeleted": false
+  },
+  {
+    "productId": 2,
+    "name": "Monitor Dell 27\"",
+    "description": "Monitor LED Full HD de 27 pulgadas",
+    "price": 299.99,
+    "stock": 3,
+    "categoryId": 1,
+    "isDeleted": false
+  },
+  {
+    "productId": 3,
+    "name": "Teclado Mecánico",
+    "description": "Teclado mecánico RGB gaming",
+    "price": 89.99,
+    "stock": 2,
+    "categoryId": 2,
+    "isDeleted": false
+  },
+  {
+    "productId": 4,
+    "name": "Mouse Gamer Logitech",
+    "description": "Mouse gaming con 12000 DPI",
+    "price": 79.99,
+    "stock": 4,
+    "categoryId": 2,
+    "isDeleted": false
+  },
+  {
+    "productId": 5,
+    "name": "Router WiFi 6",
+    "description": "Router de última generación con WiFi 6",
+    "price": 199.99,
+    "stock": 1,
+    "categoryId": 3,
+    "isDeleted": false
+  },
+  {
+    "productId": 6,
+    "name": "Cable HDMI 2.1",
+    "description": "Cable HDMI 2.1 de 2 metros",
+    "price": 29.99,
+    "stock": 3,
+    "categoryId": 3,
+    "isDeleted": false
+  }
+] 

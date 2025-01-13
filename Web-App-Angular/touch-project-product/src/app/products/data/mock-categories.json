@@ -1,0 +1,17 @@
+[
+  {
+    "categoryId": 1,
+    "name": "Computadoras",
+    "description": "Laptops, Desktops y Monitores"
+  },
+  {
+    "categoryId": 2,
+    "name": "Periféricos",
+    "description": "Teclados, Mouse y Accesorios"
+  },
+  {
+    "categoryId": 3,
+    "name": "Redes",
+    "description": "Routers, Switches y Cables"
+  }
+] 

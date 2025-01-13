@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 interface LoginCredentials {
   username: string;
@@ -14,7 +17,10 @@ interface LoginCredentials {
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
@@ -34,9 +40,8 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      // Mostrar el objeto completo del formulario en la consola
-      console.log('Form Value:', this.loginForm.value);
-      
+      // Simular autenticación exitosa
+      localStorage.setItem('token', 'dummy-token');
       // Navegar al dashboard
       this.router.navigate(['/app/dashboard']);
     } else {

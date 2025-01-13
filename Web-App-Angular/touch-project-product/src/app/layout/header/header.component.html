@@ -1,17 +1,17 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="toggleMenu.emit()">
+  <button mat-icon-button (click)="toggleMenu.emit()" class="menu-button">
     <mat-icon>menu</mat-icon>
   </button>
   
-  <span>Touch Project</span>
+  <span class="app-title">Touch Project</span>
   
   <span class="spacer"></span>
   
-  <button mat-icon-button [matMenuTriggerFor]="menu">
+  <button mat-icon-button [matMenuTriggerFor]="userMenu" class="user-menu">
     <mat-icon>account_circle</mat-icon>
   </button>
   
-  <mat-menu #menu="matMenu">
+  <mat-menu #userMenu="matMenu">
     <button mat-menu-item (click)="logout()">
       <mat-icon>exit_to_app</mat-icon>
       <span>Cerrar Sesión</span>

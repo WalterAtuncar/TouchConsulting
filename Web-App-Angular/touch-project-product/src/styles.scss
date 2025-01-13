@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
 
 /* Paleta de colores corporativos */
 :root {
@@ -20,4 +21,46 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--touch-gray);
   color: var(--touch-text);
+}
+
+// Estilos para tablas responsivas
+.mat-mdc-table {
+  width: 100%;
+  
+  @media (max-width: 768px) {
+    .mat-mdc-header-row {
+      display: none;
+    }
+
+    .mat-mdc-row {
+      display: flex;
+      flex-direction: column;
+      padding: 8px 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.12);
+
+      &:nth-child(even) {
+        background: rgba(0,0,0,0.02);
+      }
+    }
+
+    .mat-mdc-cell {
+      display: flex;
+      padding: 4px 0;
+      border: none;
+
+      &:before {
+        content: attr(data-label);
+        font-weight: bold;
+        width: 40%;
+        padding-right: 16px;
+      }
+    }
+  }
+}
+
+// Estilos para cards responsivas
+.mat-mdc-card {
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+  }
 }

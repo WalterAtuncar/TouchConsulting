@@ -1,0 +1,158 @@
+.user-list-container {
+  padding: 20px;
+  background-color: #f5f7fa;
+  min-height: calc(100vh - 64px);
+
+  .header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h1 {
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.87);
+      margin: 0;
+      font-weight: 400;
+    }
+
+    button {
+      display: none;
+    }
+  }
+
+  // Botón flotante
+  .mat-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #3f51b5;
+    color: white;
+    z-index: 1000;
+  }
+
+  .mat-elevation-z8 {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .mat-mdc-table {
+    width: 100%;
+    background: transparent;
+
+    .mat-mdc-header-row {
+      display: none;
+    }
+
+    .mat-mdc-row {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow: hidden;
+      position: relative;
+      padding: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .mat-mdc-cell {
+      display: flex;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, 0.87);
+      
+      &:before {
+        content: attr(data-label);
+        width: 80px;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 12px;
+      }
+
+      &[data-label="Nombre"] {
+        padding-top: 16px;
+      }
+
+      &[data-label="Email"] {
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      &[data-label="Acciones"] {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        padding: 0;
+        
+        &:before {
+          display: none;
+        }
+
+        button {
+          min-width: 32px;
+          width: 32px;
+          height: 32px;
+          padding: 0;
+          margin: 0 4px;
+          border-radius: 4px;
+          
+          &:first-child {
+            background-color: #3f51b5;
+            color: white;
+          }
+
+          &:last-child {
+            background-color: #f44336;
+            color: white;
+          }
+          
+          mat-icon {
+            margin: 0;
+            font-size: 18px;
+            line-height: 18px;
+          }
+          
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 599px) {
+    padding: 16px;
+    
+    .header {
+      margin-bottom: 16px;
+    }
+
+    .mat-mdc-row {
+      margin-bottom: 8px;
+    }
+
+    .mat-mdc-cell {
+      padding: 6px 16px;
+      
+      &[data-label="Acciones"] {
+        button {
+          min-width: 28px;
+          width: 28px;
+          height: 28px;
+          
+          mat-icon {
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+  }
+} 

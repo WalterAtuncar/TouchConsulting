@@ -1,0 +1,38 @@
+.user-list-container {
+  padding: 20px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h1 {
+      margin: 0;
+      color: var(--touch-primary);
+    }
+  }
+
+  mat-card {
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+
+    .mat-column-actions {
+      width: 120px;
+      text-align: center;
+    }
+
+    .mat-header-cell {
+      background-color: var(--touch-primary);
+      color: var(--touch-white);
+      font-weight: bold;
+    }
+
+    .mat-row:hover {
+      background-color: var(--touch-accent);
+    }
+  }
+} 

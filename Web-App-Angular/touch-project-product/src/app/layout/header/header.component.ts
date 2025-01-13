@@ -23,6 +23,9 @@ export class HeaderComponent {
   constructor(private router: Router) {}
 
   logout(): void {
-    this.router.navigate(['/auth/login']);
+    // Limpiar el token y otros datos de autenticación
+    localStorage.removeItem('token');
+    // Navegar a la página de login
+    this.router.navigate(['/login']);
   }
 } 

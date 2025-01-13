@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  mat-dialog-content {
+    min-width: 350px;
+    padding-top: 16px;
+
+    @media (max-width: 599px) {
+      min-width: unset;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+  }
+
+  mat-dialog-actions {
+    padding: 16px 0;
+    
+    @media (max-width: 599px) {
+      flex-direction: column;
+      gap: 8px;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+} 

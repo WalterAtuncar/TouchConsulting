@@ -1,0 +1,14 @@
+{
+  "roles": [
+    {
+      "id": 1,
+      "name": "Administrador",
+      "description": "Acceso completo al sistema"
+    },
+    {
+      "id": 2,
+      "name": "Usuario",
+      "description": "Acceso limitado al sistema"
+    }
+  ]
+} 

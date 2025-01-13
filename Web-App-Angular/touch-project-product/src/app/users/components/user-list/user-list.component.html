@@ -1,0 +1,51 @@
+<div class="user-list-container">
+  <div class="header">
+    <h1>Gestión de Usuarios</h1>
+  </div>
+
+  <button mat-fab color="primary" (click)="openUserForm()">
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="users">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let user" data-label="Nombre">
+          <strong>{{ user.fullName }}</strong>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef>Usuario</th>
+        <td mat-cell *matCellDef="let user" data-label="Usuario">
+          {{ user.username }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let user" data-label="Email">
+          {{ user.email }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let user" data-label="Acciones">
+          <button mat-flat-button color="primary" (click)="openUserForm(user)">
+            <mat-icon>edit</mat-icon>
+            <span>Editar</span>
+          </button>
+          <button mat-flat-button color="warn" (click)="deleteUser(user.userId)">
+            <mat-icon>delete</mat-icon>
+            <span>Eliminar</span>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div> 

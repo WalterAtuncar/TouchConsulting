@@ -28,7 +28,21 @@ export class SidebarComponent {
       icon: 'dashboard',
       label: 'Dashboard',
       route: '/app/dashboard'
+    },
+    {
+      icon: 'people',
+      label: 'Usuarios',
+      route: '/app/users'
+    },
+    {
+      icon: 'inventory_2',
+      label: 'Productos',
+      route: '/app/products'
+    },
+    {
+      icon: 'assessment',
+      label: 'Reporte Stock Bajo',
+      route: '/app/reports/low-stock'
     }
-    // Aquí puedes agregar más items del menú
   ];
 } 
