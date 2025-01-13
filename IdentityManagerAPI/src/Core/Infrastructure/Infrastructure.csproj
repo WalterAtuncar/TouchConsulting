@@ -28,9 +28,4 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Dapper\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>
