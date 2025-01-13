@@ -1,0 +1,244 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/auth/login",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/auth/login",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DelegatingHandlers": []
+    },
+    {
+      "DownstreamPathTemplate": "/api/Menu",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/identity/menu",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Menu/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/identity/menu/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Person",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/identity/person",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Person/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/identity/person/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Role",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/identity/role",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Role/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/identity/role/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/RoleMenu",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/identity/rolemenu",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/RoleMenu/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/identity/rolemenu/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/User",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/identity/user",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/User/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44351
+        }
+      ],
+      "UpstreamPathTemplate": "/api/identity/user/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44322
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products/product",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin", "User" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44322
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products/product/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin", "User" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Category",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44322
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products/category",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin", "User" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Category/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44322
+        }
+      ],
+      "UpstreamPathTemplate": "/api/products/category/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "DelegatingHandlers": [ "TokenHandler" ],
+      "RouteClaimsRequirement": {
+        "Role": [ "Admin", "User" ]
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44300"
+  }
+} 
