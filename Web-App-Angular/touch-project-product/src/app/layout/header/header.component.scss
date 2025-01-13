@@ -1,0 +1,14 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+:host {
+  mat-toolbar {
+    background-color: var(--touch-primary);
+    color: var(--touch-white);
+  }
+
+  .mat-icon-button {
+    color: var(--touch-white);
+  }
+} 

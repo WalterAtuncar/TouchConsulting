@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Paleta de colores corporativos */
+:root {
+  --touch-primary: #003366;    /* Azul oscuro del logo */
+  --touch-secondary: #0099FF;  /* Azul claro del logo */
+  --touch-accent: #E6F3FF;     /* Azul muy claro para fondos */
+  --touch-white: #FFFFFF;
+  --touch-gray: #F5F5F5;
+  --touch-text: #333333;
+}
+
+/* Estilos globales */
+html, body { 
+  height: 100%; 
+  margin: 0;
+}
+
+body { 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--touch-gray);
+  color: var(--touch-text);
+}

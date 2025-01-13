@@ -1,0 +1,42 @@
+<div class="login-container">
+  <div class="login-box">
+    <div class="login-form">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo">
+      </div>
+      <h1>INICIAR SESIÓN</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-field">
+          <label>USUARIO</label>
+          <input type="text" formControlName="username" placeholder="Ingrese su usuario">
+          <div class="error-message" *ngIf="loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched">
+            El usuario es requerido
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>CONTRASEÑA</label>
+          <input type="password" formControlName="password" placeholder="Ingrese su contraseña">
+          <div class="error-message" *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+            La contraseña es requerida
+          </div>
+          <div class="error-message" *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched">
+            La contraseña debe tener al menos 6 caracteres
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="!loginForm.valid">
+          INGRESAR
+        </button>
+      </form>
+    </div>
+    <div class="login-image">
+      <div class="company-info">
+        <div class="company-logo">
+          <img src="assets/logo-white.png" alt="Company Logo">
+        </div>
+        <h2><strong>TOUCH CONSULTING</strong></h2>
+      </div>
+    </div>
+  </div>
+</div> 

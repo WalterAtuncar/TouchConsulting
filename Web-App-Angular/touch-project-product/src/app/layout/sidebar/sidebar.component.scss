@@ -1,0 +1,38 @@
+.sidebar-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--touch-white);
+}
+
+.logo-container {
+  padding: 16px;
+  text-align: center;
+  background-color: var(--touch-accent);
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+:host ::ng-deep {
+  .mat-mdc-list-item {
+    &.active {
+      background-color: var(--touch-accent) !important;
+      color: var(--touch-primary);
+
+      .mat-icon {
+        color: var(--touch-primary);
+      }
+    }
+
+    &:hover {
+      background-color: var(--touch-gray);
+    }
+
+    .mat-icon {
+      color: var(--touch-primary);
+    }
+  }
+} 

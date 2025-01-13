@@ -1,0 +1,16 @@
+mat-sidenav-container {
+  height: 100vh;
+  background-color: var(--touch-gray);
+}
+
+mat-sidenav {
+  width: 250px;
+  background-color: var(--touch-white);
+  border-right: 1px solid rgba(0,0,0,0.12);
+}
+
+main {
+  padding: 20px;
+  background-color: var(--touch-gray);
+  min-height: calc(100vh - 64px);
+} 
